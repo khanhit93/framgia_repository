@@ -1,0 +1,35 @@
+<tr>
+  <td class="col-md-2" >
+    <div class="word">
+      <%= word.content %>
+    </div>
+  </td>
+  <td class="col-md-3">
+   <div class="answer">
+    <ul>
+      <% word.word_answers.each do |answer| %>
+        <li class="answer-<%= answer.correct_answer%>">
+          <%= answer.content %>
+        </li>
+      <% end %>
+    </ul>
+   </div>
+  </td>
+  <td class="col-md-5">
+    <div class="categories">
+      <%= word.category.conten %>
+    </div>
+  </td>
+  <td class="col-md-2">
+    <div class="button_action center">
+      <%= link_to edit_admin_word_path(word), "data-toggle": "tooltip",
+        title: t("tooltip_edit") do  %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <%= link_to [:admin, word], "data-toggle": "tooltip",
+        title: t("tooltip_delete"), method: :delete do  %>
+          <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </div>
+  </td>
+</tr>

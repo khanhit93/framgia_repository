@@ -1,0 +1,18 @@
+<% provide :title, t("lesson.exam") %>
+<div>
+  <h1><%= t("lesson.exam") + @lesson.category.conten %></h>
+</div>
+<div class="col-md-8 col-md-offset-2 ">
+  <%= form_for @lesson do |f| %>
+    <ol>
+      <%= f.fields_for :results do |builder| %>
+        <%= render "result", f: builder %>
+      <% end %>
+    </ol>
+  <% end %>
+  <div class="center">
+    <button type="button" disabled>
+      <%= t("lesson.finish") %>
+    </button>
+  </div>
+</div>

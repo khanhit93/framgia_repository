@@ -1,0 +1,18 @@
+<tr>
+  <td>
+    <div class="word">
+      <%= word.content %>
+    </div>
+  </td>
+  <td>
+   <div class="answer">
+    <ul>
+      <% word.word_answers.each do |answer| %>
+        <li class="answer-<%= answer.correct_answer%>">
+          <%= answer.content %>
+        </li>
+      <% end %>
+    </ul>
+   </div>
+  </td>
+</tr>

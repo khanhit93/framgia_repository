@@ -1,0 +1,15 @@
+<tr>
+  <td><%= l lesson.created_at, format: :short %></td>
+  <td><%= lesson.category.conten %></td>
+  <td class="center"><%= Settings.questions_in_lesson %></td>
+  <td class="center"><%= lesson.is_complete? ? lesson.score : "-" %></td>
+  <td class="center">
+  <% if lesson.is_complete? %>
+    <%= link_to t("lesson.finished"), edit_lesson_path(lesson),
+      class: "btn btn-success btn-sm" %>
+  <% else %>
+    <%= link_to t("lesson.start"), edit_lesson_path(lesson),
+      class: "btn btn-info btn-sm" %>
+  <% end %>
+  </td>
+</tr>

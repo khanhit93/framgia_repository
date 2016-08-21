@@ -1,0 +1,22 @@
+<div class="row">
+  <h1 class="title"><%= t "all_users" %></h1>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-default">
+      <tr class="first_colum">
+        <th class="center">
+          <%= t ".name" %>
+        </th>
+        <th class="center">
+          <%= t ".info" %>
+        </th>
+        <th class="center">
+          <%= t ".action" %>
+        </th>
+      </tr>
+      <%= render @users %>
+    </table>
+    <div class="center">
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

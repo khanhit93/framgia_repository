@@ -1,0 +1,25 @@
+<div class="row">
+  <h1 class="title"><%= t "category" %></h1>
+  <div class="col-md-10 col-md-offset-1 ">
+  <div class="filter_form">
+    <%= link_to new_admin_category_path, class: "btn btn-info pull-left" do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      <%= t ".add_category" %>
+    <% end %>
+    <br>
+  </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr class="first_colum">
+          <th><%= t ".index" %></th>
+          <th><%= t ".content" %></th>
+          <th><%= t ".feature" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>

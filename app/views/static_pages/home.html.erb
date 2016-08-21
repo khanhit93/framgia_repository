@@ -1,0 +1,23 @@
+<% provide :title, t("home") %>
+<div class="row">
+  <% if logged_in? %>
+    <h1><%= t ".activity_title" %></h1>
+    <div class="col-md-3">
+      <div class="user_info center">
+        <%= render "shared/user_info" %>
+      </div>
+      <div class="stats center">
+        <%= render "shared/stats" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <table class="table">
+        <% @activities.each do |activity| %>
+          <%= render "shared/activity", activity: activity %>
+        <% end %>
+      </table>
+    </div>
+  <% else %>
+    <%= render "shared/introduction" %>
+  <% end %>
+</div>

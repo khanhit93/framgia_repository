@@ -1,0 +1,59 @@
+<header class="navbar navbar-default">
+  <%= link_to t("base_title"), root_path, id: "logo" %>
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <% if logged_in? and current_user.is_admin? %>
+          <li><%= link_to t("all_users"), admin_users_path %></li>
+          <li><%= link_to t("all_categories"), admin_categories_path %></li>
+          <li><%= link_to t("all_words"), admin_words_path %></li>
+
+        <% elsif  logged_in? %>
+          <li><%= link_to t("all_categories"), categories_path %></li>
+          <li><%= link_to t("all_words"), words_path %></li>
+          <li><%= link_to t("all_lessons"), lessons_path %></li>
+          <li><%= link_to t("all_users"), users_path %></li>
+          <li><%= link_to t("about"), about_path %></li>
+        <% else %>
+          <li><%= link_to t("home"), home_path %></li>
+          <li><%= link_to t("about"), about_path %></li>
+          <li><%= link_to t("contact"), contact_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle",
+              data: {toggle: "dropdown"} do %>
+              <div class="image_avatar">
+                <%= gravatar_for current_user, siez: 10 %>
+                <%= current_user.name %><b class="caret"></b>
+              </div>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".profile"), current_user %></li>
+              <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t("logout"), logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to new_user_path do  %>
+               <span class="glyphicon glyphicon-user"></span>
+               <%= t "signup" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"> </span>
+              <%= t "login" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

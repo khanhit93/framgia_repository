@@ -1,0 +1,217 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+en:
+  app_name: "E-Learning"
+  hello: "Hello world"
+  home: "Home"
+  help: "Help"
+  category: "Categories"
+  choose: "Choose Categories"
+  all_categories: "Categories"
+  all_words: "Words"
+  all_lessons: "Lessons"
+  all_users: "Acounts"
+  addedcategory: "Category added"
+  waring: "Currently Category is Empty"
+  editcategory: "Edit"
+  createfail: "Create fail, try choose other category"
+  create: "Create"
+  lessonlist: "Lessons list"
+  new: "News"
+  about: "About"
+  login: "Log in"
+  logout: "Log out"
+  contact: "Contact"
+  signup: "Sign up now!"
+  contact_page: "Contact Page"
+  base_title: "E-Learning"
+  home_title: "Welcome to Framgia E-learning"
+  male: "Male"
+  content: "Content"
+  female: "Female"
+  error: "Error"
+  check_admin: "You are not admin"
+  lesson:
+    error: "Not success"
+    notlesson: "Not ivalid lesson"
+    permission: "You do not permission"
+    save: "Saved"
+    start: "To learn"
+    exam: "Test "
+    show: "Show"
+    success: "Create Lesson Success"
+    error: "not success"
+    over: "finished"
+    submit: "Finish!"
+    finish: "Finished Success"
+    finish_fail: "Finish Fail"
+    create: "Created Date"
+    category: "Category"
+    status: "Status"
+    question: "Number questions"
+    score: "Score"
+    learning: "Learnign"
+    action: "Action"
+  error_message: "The form contains"
+  success: "Welcome "
+  delete: "Delete"
+  confirm_delete: "Are you sure delete %{name}"
+  tooltip_delete: "Delete %{name}"
+  tooltip_edit: "Edit"
+  tooltip_add: "Add"
+  follow: "Follow"
+  unfollow: "Unfollow"
+  satic_pages:
+    all_users: "All Users"
+  admin:
+    words:
+      index:
+        title: "All words"
+        btn_search: "Filter"
+        btn_add_word: "Add word"
+        select_all: "Show All"
+        word: "Word"
+        word_answer: "Word answer"
+        categories: "Categories"
+        action: "Action button"
+      destroy:
+        message_scucess: "Delete success %{word}"
+        not_found: "Not found this word"
+      new:
+        title: "Add word"
+        lable_word: "Word content: "
+        lable_cateogry: "Choose cateogry: "
+        lable_word: "Word content: "
+      create:
+        success: "Create successful %{word}"
+      edit:
+        not_found: "Not found this word"
+      update:
+        not_found: "Not found this word"
+        success: "Update successful word %{word}"
+        failed: "Can not update this file"
+    add: "Add Word"
+    success: "Category updated"
+    deletecategory: "Deleted"
+    users:
+      index:
+        cancel_admin: "Cancel admin"
+        assign_admin: "Assign admin"
+        info: "Information"
+        action: "Button action"
+      update:
+        success: "Assign admin Successful"
+        fail: "Assign admin fails "
+      destroy:
+        message: "Deleted user %{name}"
+        fail: "Delete fail"
+        fail_destroy: "Can not destroy admin"
+    categories:
+      add_category: "add category"
+    index:
+      delete: "Delete user"
+      confirm_delete: "Are you sure"
+  sigup:
+    title: "Sigup"
+    confirmation: "Confirmation"
+  words:
+    index:
+      title: "Words list"
+      btn_search: "Filter"
+  users:
+    following:
+      title: "All user following"
+    followers:
+      title: "All user followers"
+    require_login: "Please login!!"
+    admin_only: "You are not admin"
+    index:
+      all_users: "All Users"
+      email: "Email: "
+      telephone: "Telephone: "
+      sex: "Gender: "
+    new:
+      title: "Sigup"
+      name: "Name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      female: "Female"
+      male: "Male"
+    create:
+      success: "Welcome %{name} to E-learning"
+      activation_mail: "Please check your email to activate your account."
+    edit:
+      title: "Edit Profile"
+      change_avatar: "Change avatar"
+      only_current_user: You only change your acount !!!
+    update:
+      success: "Your profile updated"
+    show:
+      name: "Full name: "
+      email: "Email: "
+      phone: "Telephone: "
+      gender: "Gender: "
+      sex1: "Male"
+      sex0: "Female"
+      myprof: "My Profile"
+      activity_title: "Activities recently %{name}"
+    destroy:
+  helper:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+  signup: "Sign up"
+  controller:
+    session:
+      flash: "Invalid email/password combination"
+    user:
+      flash: "Welcome to Framgia E-learning"
+  view:
+    session:
+      new:
+        user: "New user? "
+        email: "Email or telephone......"
+        pass: "Password......."
+        remember: "Remember me on this computer"
+    layout:
+      header:
+        account: "Account"
+        profile: "Profile"
+        setting: "Setting"
+        user: "Users"
+  user_mailer:
+    account_activation:
+      subject: "%{name} - Account activation"
+      content: "Hi %{name}, Welcome to the E-learning! Click on the link below
+        to activate your account:"
+      link_active: "Link Active, click here"
+  account_activations:
+    edit:
+      success: "Account activated!"
+      fail: "Invalid activation link"
+  categories:
+    index:
+      title: "Cateogries all"
+    show:
+      title: "Cateogries info"
+      category_name: "Category name"
+      number_words: "Number words"
+  static_pages:
+    home:
+      profile: "view my profile"
+      activity_title: "Activities recently"
+      time_ago: "%{time} ago"
+  relationships:
+  time_ago: "%{time} ago"
+  welcome_admin: "Welcom to admin"
+  introduction: "E-Learning is a website that helps you enhance the knowledge to
+    become human wisdom and understanding. E-Learning in many different areas of
+    life such as history, society, science ... Let's not stop learning and to
+    become good life and happiness"

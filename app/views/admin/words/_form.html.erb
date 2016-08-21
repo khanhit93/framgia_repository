@@ -1,0 +1,26 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="categories_select">
+    <%= f.label :category_id %>
+    <%= f.select :category_id,
+      options_for_select(@categories.map{|c| [c.conten, c.id]}),
+      {}, class: "form-control" %>
+  </div>
+  <div class="word_answer">
+    <h3><%= t ".answers" %></h3>
+    <%= f.fields_for :word_answers do |builder| %>
+      <%= builder.label :content, t(".word_answer") %>
+      <%= builder.text_field :content, size: Settings.size_text_field %>
+      <%= builder.label :correct_answer, t(".correct_answer") %>
+      <%= builder.check_box :correct_answer, class: "is_correct_answer" %>
+      <br>
+    <% end %>
+  </div>
+  <div class= "button_action" >
+    <%= f.submit class: "my_btn" %>
+  </div>
+<% end %>

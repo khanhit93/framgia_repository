@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-4">
+      <div class="cv_user">
+        <div class="avat">
+          <%= gravatar_for @user %>
+          <%= t ".myprof" %>
+        </div>
+        <hr>
+        <span class="glyphicon glyphicon-user">
+          <%= "#{t(".name")} #{@user.name}" %>
+        </span>
+        <hr>
+        <span class="glyphicon glyphicon-envelope">
+          <%= "#{t(".email")} #{@user.email}" %>
+        </span>
+        <hr>
+        <span class="glyphicon glyphicon-phone">
+          <%= "#{t(".phone")} #{@user.telephone}" %>
+        </span>
+        <hr>
+        <% if @user.sex? %>
+          <span class="fa fa-transgender">
+            <%= t(".gender") + t(".sex1") %>
+          </span>
+        <% else %>
+          <span class="fa fa-transgender">
+            <%= t(".gender") + t(".sex0") %>
+          </span>
+        <% end %>
+        <hr>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <%= render "follow_form" %>
+    <h3 class="center"><%= t(".activity_title", name: @user.name) %></h3>
+    <table class="table">
+      <% @user.activities.each do |activity| %>
+        <%= render "shared/activity", activity: activity %>
+      <% end %>
+    </table>
+  </div>
+</div>
+

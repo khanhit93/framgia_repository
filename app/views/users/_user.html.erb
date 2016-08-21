@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= gravatar_for user %>
+  </td>
+  <td>
+    <div class="index_user">
+      <%= link_to user.name, user %>
+      <p>
+        <span><%= t(".email") %></span> <%= user.email%>
+      </p>
+      <p>
+        <span><%= t(".telephone") %></span> <%= user.telephone%>
+      </p>
+      <p>
+        <span><%= t ".sex" %></span> <%= user.get_sex %>
+      </p>
+    </div>
+  </td>
+</tr>

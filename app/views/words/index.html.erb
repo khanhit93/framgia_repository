@@ -1,0 +1,24 @@
+<div class="row">
+  <h1><%= t ".title" %></h1>
+  <div class="col-md-9 col-md-offset-1">
+    <div class="form-inline filter_form">
+      <%= form_tag '', method: :get do %>
+        <%= select_tag :category_id, options_from_collection_for_select(
+          @categories, :id, :conten, params[:categroy_id]),
+          include_blank: t(".select_all"), class: "form-control" %>
+        <% Settings.word_filter.each do |option| %>
+          <%= radio_button_tag :word_filter, option,
+            params[:word_filter] == option %>
+          <%= option %>
+        <% end %>
+        <%= submit_tag t(".btn_search"), class: "btn btn-default" %>
+      <% end %>
+    </div>
+    <table class="table table-default">
+      <%= render @words %>
+    </table>
+  </div>
+  <div class="center">
+    <%= will_paginate %>
+  </div>
+ </div>

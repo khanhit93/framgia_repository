@@ -1,0 +1,6 @@
+per_page: 15
+category:
+  per_page: 15
+questions_in_lesson: 5
+minimum_words: 3
+word_filter: ["learned", "unlearned", "show_all"]

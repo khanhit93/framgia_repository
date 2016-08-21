@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="category_info">
+      <h3><%= t ".title" %></h3>
+      <span class="name">
+        <%= "#{t(".category_name")}: #{@category.conten}" %>
+      </span>
+      <span><%= "#{t(".number_words")}: #{@category.words.size}" %></span>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <table class="table table-default">
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= word.content %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

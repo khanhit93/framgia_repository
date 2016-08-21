@@ -1,0 +1,20 @@
+<tr>
+  <td class="center"><%= category_counter +1 %></td>
+  <td><%= category.conten %></td>
+  <td class=" button_action center">
+    <%= link_to [:edit, :admin, category], "data-toggle": "tooltip",
+      title: t("tooltip_edit") do  %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+
+    <%= link_to [:admin, category], "data-toggle": "tooltip",
+      title: t("tooltip_delete", name: category.conten), method: :delete do  %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+
+    <%= link_to new_admin_word_path, "data-toggle": "tooltip",
+      title: t("admin.words.index.btn_add_word") do %>
+        <span class=" glyphicon glyphicon-plus-sign"></span>
+    <% end %>
+  </td>
+</tr>

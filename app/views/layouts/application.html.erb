@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield :title %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": true %>
+    <%= csrf_meta_tags %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body>
+    <div class="center banner">
+      <%= image_tag "e_learning.jpg" %>
+      <%= render "layouts/header" %>
+    </div>
+    <%  if ( logged_in? and current_user.is_admin?) %>
+      <div class="box_admin pull-right">
+        <marquee>
+          <%= t "welcome_admin"%>
+        </marquee>
+      </div>
+    <% end %>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <p class="alert alert-<%= key %>"><%= value %></p>
+      <% end %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+
+</html>

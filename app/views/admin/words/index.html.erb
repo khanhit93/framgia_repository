@@ -1,0 +1,29 @@
+<div class="row">
+  <h1><%= t ".title" %></h1>
+  <div class="col-md-8 form-inline filter_form">
+    <%= form_tag '', method: :get do %>
+      <%= select_tag :category_id, options_from_collection_for_select(
+        @categories, :id, :conten, params[:categroy_id]),
+        include_blank: t(".select_all"), class: "form-control" %>
+      <%= submit_tag t(".btn_search"), class: "btn btn-default" %>
+    <% end %>
+  </div>
+  <div class="col-md-4 filter_form">
+    <%= link_to new_admin_word_path, class: "btn btn-info pull-right" do %>
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        <%= t ".btn_add_word" %>
+    <% end %>
+  </div>
+  <table class="table table-bordered">
+    <tr class="first_colum" >
+      <th><%= t ".word" %></th>
+      <th><%= t ".word_answer" %></th>
+      <th><%= t ".category" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+    <%= render @words %>
+  </table>
+  <div class="center">
+    <%= will_paginate %>
+  </div>
+</div>

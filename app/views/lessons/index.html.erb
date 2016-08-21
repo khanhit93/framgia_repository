@@ -1,0 +1,25 @@
+<div class="row">
+  <h1><%= t "lessonlist" %></h1>
+  <div class="col-md-10 col-md-offset-1 ">
+    <div class="filter_form form-inline">
+      <%= render "form" %>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t "lesson.create" %></th>
+          <th><%= t "lesson.category" %></th>
+          <th><%= t "lesson.question" %></th>
+          <th><%= t "lesson.score" %></th>
+          <th><%= t "lesson.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @lessons %>
+      </tbody>
+    </table>
+    <div class="center">
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

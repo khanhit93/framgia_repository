@@ -1,0 +1,27 @@
+<tr>
+  <td>
+    <%= gravatar_for user %>
+  </td>
+  <td>
+    <div class="index_user">
+      <%= link_to user.name, user %>
+      <p>
+        <span><%= t(".email") %></span> <%= user.email%>
+      </p>
+  </td>
+  <td class="col-md-3">
+    <% unless current_user == user %>
+      <% if user.is_admin? %>
+        <%= link_to t(".cancel_admin"),
+          admin_user_path(user, is_admin: false), method: :patch,
+          class: "btn btn-default btn-sm" %>
+      <% else %>
+        <%= link_to t("assign_admin"), admin_user_path(user, is_admin: true),
+          method: :put, class: "btn btn-primary btn-sm" %>
+      <% end %>
+      <%= link_to t("delete"), [ :admin, user], method: :delete,
+        data: {confirm: t("confirm_delete", name: user.name)},
+        class: "btn btn-warning btn-sm" %>
+    <% end %>
+  </td>
+</tr>
